@@ -1,12 +1,4 @@
 /*
-Use this file in your project.
-
-But first, create a Node project:
-npm init -y
-
-Then add a line to package.json:
-"type": "module",
-
 Usage:
 import { ask } from './ask.js'
 let answer = await ask("Hello, what's your name? ")
