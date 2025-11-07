@@ -6,7 +6,7 @@ npm run start
 
 Håll utkik efter kommentarer med texten "TODO" i filerna.
 */
-import { showBalance, renameAccount  } from "./account.js"
+import { showBalance, renameAccount, deposit  } from "./account.js"
 import { ask } from "./ask.js"
 import { isExitCommand, printIntroduction, printMenu } from "./utils.js"
 
@@ -27,6 +27,7 @@ async function mainLoop() {
 
 		else if( choice === '2' ) {
 			// TODO: insättning
+			deposit()
 		}
 			// TODO: lägg till fler alternativ här...
 			else if (choice === "6") {

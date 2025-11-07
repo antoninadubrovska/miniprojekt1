@@ -10,7 +10,16 @@ function showBalance() {
 
 
 // TODO: lägg till funktioner för återstående menyalternativ. Förslag:
+
 // async function deposit(money) {}
+function deposit() {
+	const amount = Number(prompt('Hur mycket vill du sätta in? '))
+	if (amount > 0)
+		state.balance += amount
+	console.log(`Du har satt in ${amount} kr.`)
+	showBalance()
+}
+
 // async function withdraw...
 // async function calculateInterest...
 // async function setInterest...
@@ -20,8 +29,8 @@ function renameAccount() {
 	console.log(`Nuvarande kontonamn: ${state.accountName}`)
 	const newName = prompt('Ange nytt kontonamn: ')
 	state.accountName = newName
-	console.log(`Kontonamnet är ändrt till: ${state.accountName}`)
+	console.log(`Kontonamnet är ändrad till: ${state.accountName}`)
 }
 
 
-export { showBalance, renameAccount }
+export { showBalance, renameAccount, deposit }
