@@ -21,6 +21,22 @@ function deposit() {
 }
 
 // async function withdraw...
+
+function withdraw() {
+	const amount = Number(prompt('Hur mycket vill du ta ut? '))
+
+	if (amount > state.balance) {
+		console.log('Du har inte tillräckligt med pengar :( ')
+		//return
+	}
+
+	//else {}
+
+	state.balance -= amount
+	console.log(`Du tog ut ${amount} kr.`)
+	showBalance()
+}
+
 // async function calculateInterest...
 // async function setInterest...
 
@@ -33,4 +49,4 @@ function renameAccount() {
 }
 
 
-export { showBalance, renameAccount, deposit }
+export { showBalance, renameAccount, deposit, withdraw }
