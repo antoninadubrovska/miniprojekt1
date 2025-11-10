@@ -20,7 +20,7 @@ function printMenu() {
 	console.log(`1. Visa saldo
 2. Sätt in
 3. Ta ut
-4. Lägg på sparränta (NIY)
+4. Lägg på sparränta
 5. Sätt räntesats (NIY)
 6. Byt kontonamn
 0. Avsluta `)

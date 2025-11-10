@@ -12,6 +12,7 @@ function showBalance() {
 // TODO: lägg till funktioner för återstående menyalternativ. Förslag:
 
 // async function deposit(money) {}
+// 2
 function deposit() {
 	const amount = Number(prompt('Hur mycket vill du sätta in? '))
 	if (amount > 0)
@@ -21,7 +22,7 @@ function deposit() {
 }
 
 // async function withdraw...
-
+// 3
 function withdraw() {
 	const amount = Number(prompt('Hur mycket vill du ta ut? '))
 
@@ -38,6 +39,16 @@ function withdraw() {
 }
 
 // async function calculateInterest...
+// 4
+function calculateInterest() {
+	const oldBalance = state.balance
+	state.balance *= state.interestRate
+
+	const added = state.balance - oldBalance
+	console.log(`Ränta tillagd: ${added.toFixed(2)} kr.`)
+	showBalance()
+}
+
 // async function setInterest...
 
 // task 1 ( option 6 from the menu ) - rename account
@@ -49,4 +60,4 @@ function renameAccount() {
 }
 
 
-export { showBalance, renameAccount, deposit, withdraw }
+export { showBalance, renameAccount, deposit, withdraw, calculateInterest }
