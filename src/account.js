@@ -41,6 +41,11 @@ function withdraw() {
 // async function calculateInterest...
 // 4
 function calculateInterest() {
+
+	if ( isNaN(state.interestRate)) {
+		console.log('Ogiltig räntesats. Räntesats är mellan 0 och 8 % ')
+		return
+	  }
 	const oldBalance = state.balance
 	state.balance *= state.interestRate
 
@@ -51,6 +56,28 @@ function calculateInterest() {
 
 // async function setInterest...
 
+function setInterest() {
+	console.log(`Nuvarande räntesats: ${((state.interestRate - 1) * 100).toFixed(2)}%`)
+	// const input = (prompt('Ange ny räntesats i procent: '))
+	// const newRate = Number(input)
+
+	// if (input.trim() === '' || newRate < 0 || newRate > 8) {
+	// 	console.log('Räntesats är mellan 0 och 8 % ')
+	// 	return
+	// }
+
+	const newRate = Number(prompt('Ange ny räntesats i procent: '))
+
+	if (isNaN(newRate) || newRate < 0 || newRate > 8) {
+		console.log('Ogiltig räntesats. Räntesats är mellan 0 och 8 % ')
+		return
+	}
+
+	state.interestRate = 1 + newRate / 100
+	console.log(`Ny räntesats satt till ${newRate.toFixed(2)}%`)
+	// console.log('----------------------------------------\n')
+}
+
 // task 1 ( option 6 from the menu ) - rename account
 function renameAccount() {
 	console.log(`Nuvarande kontonamn: ${state.accountName}`)
@@ -60,4 +87,4 @@ function renameAccount() {
 }
 
 
-export { showBalance, renameAccount, deposit, withdraw, calculateInterest }
+export { showBalance, renameAccount, deposit, withdraw, calculateInterest, setInterest }

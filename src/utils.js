@@ -21,7 +21,7 @@ function printMenu() {
 2. Sätt in
 3. Ta ut
 4. Lägg på sparränta
-5. Sätt räntesats (NIY)
+5. Sätt räntesats 
 6. Byt kontonamn
 0. Avsluta `)
 	// NIY == Not Implemented Yet
